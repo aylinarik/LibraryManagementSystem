@@ -1,0 +1,261 @@
+.book-detail-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.book-detail-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0096be;
+}
+
+.hamburger-menu {
+  position: relative;
+}
+
+.hamburger-icon {
+  background-color: #0096be;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 150px;
+  z-index: 1001;
+}
+
+.menu-dropdown a {
+  display: block;
+  padding: 10px;
+  color: #0096be;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.menu-dropdown a:hover {
+  background-color: #f0f4f8;
+}
+
+.book-detail-content {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.book-image-detail {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.book-info-detail {
+  padding: 30px;
+  flex: 1;
+  color: #333;
+}
+
+.book-info-detail h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.book-info-detail p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.borrow-button {
+  background-color: #0096be;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.borrow-button:hover {
+  background-color: #007bb5;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  color: #0096be;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.modal-content li {
+  margin-bottom: 10px;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+
+.modal-content li:before {
+  content: "•";
+  color: #79973a;
+  font-size: 1.5rem;
+  padding-right: 8px;
+}
+
+.confirm-button,
+.close-button {
+  margin-top: 15px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-button {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 10px;
+}
+
+.confirm-button:hover {
+  background-color: #45a049;
+}
+
+.close-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.close-button:hover {
+  background-color: #e53935;
+}
+
+.modal-content::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 6px;
+  background-color: #0096be;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .book-detail-content {
+    flex-direction: column;
+    max-width: 90%;
+    margin-top: 36px;
+  }
+
+  .book-image-detail {
+    max-width: 100%;
+  }
+
+  .book-info-detail {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-detail-content {
+    max-width: 95%;
+    margin-top: 36px;
+  }
+
+  .book-image-detail {
+    max-width: 100%;
+  }
+
+  .book-info-detail h1 {
+    font-size: 1.2rem;
+  }
+
+  .book-info-detail p {
+    font-size: 0.9rem;
+  }
+
+  .borrow-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}

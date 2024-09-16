@@ -1,0 +1,246 @@
+.books-list-page {
+  background-color: white;
+  position: relative;
+}
+
+h2 {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filters .filter-group {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.filters label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.filters input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #0096be;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-right: 10px;
+}
+
+.filters input:focus {
+  outline: none;
+  border-color: #007bb5;
+  box-shadow: 0 0 8px rgba(0, 123, 181, 0.5);
+}
+
+.se-area {
+  background-color: #007bb5;
+  margin-top: 10px;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.se-area:hover {
+  background-color: #005f8b;
+  transform: scale(1.05);
+}
+
+.se-area:active {
+  background-color: #004a70;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px;
+  padding: 20px; 
+  margin: 0 auto;
+  max-width: 1200px; 
+}
+
+.book-card {
+  border: 1px solid #ddd;
+  padding: 16px; 
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f9f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.book-card img {
+  width: 100%;
+  max-width: 300px; 
+  height: auto; 
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.book-card h2 {
+  font-size: 1.2rem;
+  margin: 12px 0;
+  color: #333;
+}
+
+.book-card p {
+  font-size: 1rem;
+  color: #666;
+  margin: 8px 0; 
+}
+
+.book-card .publisher {
+  background-color: #007cb5a5;
+  color: white;
+  padding: 4px 8px; 
+  border-radius: 4px;
+  width: 100%; 
+  text-align: center; 
+  margin-top: auto; 
+}
+
+.book-card button {
+  background-color: #0096be;
+  color: white;
+  border: none;
+  padding: 10px 20px; 
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.book-card button:hover {
+  background-color: #007bb5;
+}
+
+.view-btn {
+  background-color: #7a973a4e;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination .page-item {
+  margin: 0 5px;
+}
+
+.pagination .page-link {
+  display: block;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #007bb5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .page-link:hover {
+  background-color: #f1f1f1;
+  color: #005f8b;
+}
+
+.pagination .active .page-link {
+  background-color: #007bb5;
+  color: white;
+  border-color: #007bb5;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #ccc;
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+  border-color: #ddd;
+}
+
+.pagination .page-item .page-link {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .filters {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .filters .filter-group {
+    margin-bottom: 0;
+    margin-right: 10px;
+    width: auto;
+    flex: 1;
+  }
+
+  .se-area {
+    width: auto;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .books-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 992px) {
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .books-grid {
+    grid-template-columns: 1fr; 
+    padding: 10px; 
+  }
+
+  .book-card {
+    padding: 12px; 
+  }
+
+  .book-card img {
+    width: 100%; 
+    height: auto; 
+  }
+}
